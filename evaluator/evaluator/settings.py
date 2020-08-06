@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'evaluatorService.apps.EvaluatorServiceConfig',
+    'evaluatorService.apps.EvaluatorserviceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
