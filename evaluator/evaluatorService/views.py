@@ -7,8 +7,13 @@ import os
 # Create your views here.
 
 def getProjects(request):
+    '''
+    Used if running locally 
+    
     x = os.getcwd()
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = x+'/gender-innovation-309b59e30541.json'
+    #os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = x+'/gender-innovation-309b59e30541.json'
+    
+    '''
     client = datastore.Client('gender-innovation')
     query = client.query(kind='ProjectData')
     id_list = list()
