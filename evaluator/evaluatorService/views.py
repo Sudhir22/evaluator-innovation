@@ -7,22 +7,24 @@ import os
 # Create your views here.
 
 def getProjects(request):
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/sudhir/Desktop/InnovationFieldExperiment/Evaluator/gender-innovation-309b59e30541.json'
+    x = os.getcwd()
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = x+'/gender-innovation-309b59e30541.json'
     client = datastore.Client('gender-innovation')
     query = client.query(kind='ProjectData')
     id_list = list()
     for x in list(query.fetch()):
         id_list.append(x.id)
     
-    render(request,"evaluatorService/projectList.html",{"id_list":id_list})
+    
+    return render(request,"evaluatorService/projectList.html",{"id_list":id_list})
     
     
-
 
 '''
-Testing code
+
+#Testing code
 
 if __name__ == "__main__":
-    print(getProjects())
-    
-'''        
+    print(getProjects("test"))
+
+'''
