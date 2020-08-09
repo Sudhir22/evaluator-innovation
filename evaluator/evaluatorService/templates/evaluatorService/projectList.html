@@ -1,23 +1,17 @@
 <html>
 <head>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script>
-
-
-var arr = ['x','y','z']
-$("div").append("<ul></ul>");
-for(var i in arr) {
-    var li = "<li>";
-    $("ul").append(li.concat(arr[i]))
-}
-
-
-    
-</script>
 </head>
 <body>
 <p>List</p>
-<div></div>
+<div>
+    <ol>
+    {% for item in id_list%}
+    <li>{{ item }}</li>
+
+    {% endfor %}
+</ol>
+</div>
     
 </body>
 </html>
