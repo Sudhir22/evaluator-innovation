@@ -25,7 +25,7 @@ SECRET_KEY = 'thq7)ecuz+s^qg=8$m_nu4bw&-8!s21=2xr1#=ctrr546&y8&='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites'
 ]
 
 MIDDLEWARE = [
@@ -73,14 +74,14 @@ WSGI_APPLICATION = 'evaluator.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -126,6 +127,7 @@ STATIC_ROOT = 'static'
 #import pymysql  # noqa: 402
 #pymysql.version_info = (1, 4, 1, "final", 0)
 #pymysql.install_as_MySQLdb()
+'''
 if os.getenv('GAE_APPLICATION', None):
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
@@ -155,7 +157,7 @@ else:
             'PASSWORD': 'cloudadmin',
         }
     }
-'''
+
     DATABASES = {
         'default': {         
             'ENGINE': 'django.db.backends.mysql',
