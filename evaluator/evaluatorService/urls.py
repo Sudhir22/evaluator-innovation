@@ -5,5 +5,6 @@ from . import views
 #from .views import end_game
 
 urlpatterns=[
-    path('evaluator/',views.getProjects,name="getProjects")
+    path('evaluator/',views.getProjects,name="getProjects"),
+    path('homepage/',views.homepage,name='homepage')
 ] 

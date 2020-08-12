@@ -24,7 +24,8 @@ def getProjects(request):
     return render(request,"evaluatorService/projectList.html",{"id_list":id_list})
     
     
-
+def homepage(request):
+    return render(request,"evaluatorService/homepage.html")
 '''
 
 #Testing code

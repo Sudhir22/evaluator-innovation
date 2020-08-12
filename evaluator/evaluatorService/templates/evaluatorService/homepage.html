@@ -1,0 +1,100 @@
+<html>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'sudoku_solver/homepage_style.css' %}">
+<link rel="stylesheet/less" type="text/css" href="{% static 'sudoku_solver/homepage.less' %}"/>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function lego () {
+  
+  var divTop = document.createElement("div");
+  var divBottom = document.createElement("div");
+  
+  divTop.setAttribute("class", "border-top");
+  divBottom.setAttribute("class", "border-bottom");
+  
+  document.body.appendChild(divTop);
+  document.body.appendChild(divBottom);
+  
+}
+
+function storeValues()
+{
+  
+  var gen = document.getElementsByName("gender");
+    for(var i=0; i<gen.length;i++)
+    {
+        if(gen[i].checked)
+        {
+            sessionStorage.setItem("Gender",gen[i].value);        
+        }
+    }
+ // sessionStorage.setItem("Gender",document.getElementsByName("gender")[0].value);
+  sessionStorage.setItem("Age",document.getElementsByName("Age")[0].value);
+  sessionStorage.setItem("ID",document.getElementsByName("ID")[0].value);
+  sessionStorage.setItem("Class",document.getElementsByName("Class")[0].value)
+  sessionStorage.setItem("subjects",document.getElementsByName("subjects")[0].value)
+  sessionStorage.setItem("fav",document.getElementsByName("fav")[0].value)
+  sessionStorage.setItem("hobb",document.getElementsByName("hobb")[0].value)
+  sessionStorage.setItem("ID2", document.getElementsByName("ID2")[0].value);
+
+
+}
+
+</script>
+</head>
+<body onload="lego();">
+  <div class="fixed">
+  <!--img src="https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif" alt="HTML5 Icon" width="250" height="250"></div>
+  <div class="new">
+    <img src="https://lh3.googleusercontent.com/proxy/ijxUT2UWzHh0jty5sLfcBC6KyXpDdKm1FIqWAwDMmqgu_ZL8mvfKeONcJH_cXLfpA-1m3XKTQEu6VDqBh4I_MRq4RTQzLGY" alt="HTML5 Icon" width="250" height="250"> 
+  </div-->
+<div class="container">
+
+  <h1>Welcome. Please enter the following details before.</h1>
+<form action="/evaluator/">
+<div class="row">
+<div class="col-25">
+  <label>ID:</label>
+</div>
+  <div class="col-75">
+    <input type="number" name="ID" placeholder="Please enter your id" required>
+  </div></div>
+    <div class="row"><div class="col-25">Please select your gender: </div>
+    <div class="col-75"><input type="radio" name="gender" value="male" required> Male<br>
+    <input type="radio" name="gender" value="female" required> Female<br>
+    <input type="radio" name="gender" value="other" required> Other <br></div></div>
+    <div class="row">
+      <div class="col-25">What is your Age?</div>
+  <div class="col-75"><input type="number" name="Age" required placeholder="Please enter your age"></div></div>
+  <div class="row">
+    <div class="col-25">Which standard you studying in?</div>
+  <div class="col-75"><input type="text" name="Class" required placeholder="Please enter the standard you are in"></div></div>
+  <div class="row">
+    <div class="col-25">What subjects do you study?</div>
+    <div class="col-75"><input type="text" name="subjects" required placeholder="Please enter subjects spereated by comma(,)"></div></div>
+  <div class="row">
+    <div class="col-25"> What is your favorite ?</div>
+  <div class="col-75"><input type="text" name="fav" required placeholder="Which subject do you like?"></div></div>
+  <div class="row">
+    <div class="col-25"> What are your hobbies ?</div>
+  <div class="col-75"><input type="text" name="hobb" required placeholder="Please list your hobbies"></div></div>
+  <br>
+  <br> 
+  
+   
+
+  
+  <input type="submit" value="Submit" onclick="storeValues();"><br>
+
+  </form>
+  </div>
+
+
+</body>
+ 
+</html>
