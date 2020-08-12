@@ -74,14 +74,14 @@ WSGI_APPLICATION = 'evaluator.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -127,7 +127,7 @@ STATIC_ROOT = 'static'
 #import pymysql  # noqa: 402
 #pymysql.version_info = (1, 4, 1, "final", 0)
 #pymysql.install_as_MySQLdb()
-'''
+
 if os.getenv('GAE_APPLICATION', None):
     # Running on production App Engine, so connect to Google Cloud SQL using
     # the unix socket at /cloudsql/<your-cloudsql-connection string>
@@ -144,20 +144,20 @@ else:
     # Running locally so connect to either a local MySQL instance or connect to
     # Cloud SQL via the proxy. To start the proxy via command line:
     #
-    #     $ cloud_sql_proxy -instances=gender-innovation:australia-southeast1:gender-innovation=tcp:3306
+    #     $ cloud_sql_proxy -instances=gender-innovation:australia-southeast1:gender-innovation=tcp:3307
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '127.0.0.1',
-            'PORT': '3306',
+            'PORT': '3307',
             'NAME': 'Project_Results',
             'USER': 'root',
             'PASSWORD': 'cloudadmin',
         }
     }
-
+'''
     DATABASES = {
         'default': {         
             'ENGINE': 'django.db.backends.mysql',
